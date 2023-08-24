@@ -13,7 +13,24 @@ namespace MortgageCalc_MVC.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult MortgagePage()
+        {
+            Loan model = new Loan();
+
+            model.Payment = 0;
+            model.TotalInterest = 0;
+            model.TotalCost = 0;
+            model.Rate = 3.5M;
+            model.Amount = 15000M;
+            model.Term = 60;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult MortgagePage(Loan loan)
         {
             return View();
         }
