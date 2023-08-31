@@ -13,6 +13,6 @@
 
         public decimal TotalCost { get; set; }
 
-        public List<LoanPayment> Payments { get; set, } = new List<LoanPayment>();
+        public List<LoanPayment> Payments { get; set; } = new List<LoanPayment>();
     }
 }
